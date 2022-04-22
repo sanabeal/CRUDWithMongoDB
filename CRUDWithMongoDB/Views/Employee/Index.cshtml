@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>Employees</h3>
+
+    <a href="@Url.Action("Add","Employee")">Add new employee</a>
+
+    <br />
+    <br />
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>F. Name</th>
+            <th>M. Name</th>
+            <th>Contact No</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Option</th>
+        </tr>
+        @foreach (var employee in ViewBag.employees)
+        {
+    <tr>
+        <td>@employee.Name</td>
+        <td>@employee.FatherName</td>
+        <td>@employee.MotherName</td>
+        <td>@employee.ContactNo</td>
+        <td>@employee.Email</td>
+        <td>@employee.Status</td>
+        <td>
+            <a href="@Url.Action("Edit","Employee",new { id = employee.Id })">Edit</a>
+
+            |
+
+            <a href="@Url.Action("Delete","Employee",new { id = employee.Id })" onclick="return confirm('Are you sure?')">Delete</a>
+
+        </td>
+    </tr>
+        }
+    </table>
+</body>
+</html>

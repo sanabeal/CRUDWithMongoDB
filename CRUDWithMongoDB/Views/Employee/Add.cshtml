@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model CRUDWithMongoDB.Entities.Employee
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    @using (Html.BeginForm("Add", "Employee", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+                    @Html.TextBoxFor(a => a.Name)
+                </td>
+            </tr>
+            <tr>
+                <td>Father Name</td>
+                <td>
+                    @Html.TextBoxFor(a => a.FatherName)
+                </td>
+            </tr>
+            <tr>
+                <td>Mother Name</td>
+                <td>
+                    @Html.TextBoxFor(a => a.MotherName)
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    @Html.TextBoxFor(a => a.Address)
+                </td>
+            </tr>
+            <tr>
+                <td>Contact No</td>
+                <td>
+                    @Html.TextBoxFor(a => a.ContactNo)
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    @Html.TextBoxFor(a => a.Email)
+                </td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    @Html.CheckBoxFor(a => a.Status)
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Save" />
+                </td>
+            </tr>
+        </table>
+    }
+</body>
+</html>

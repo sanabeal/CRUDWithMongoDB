@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model CRUDWithMongoDB.Entities.Account
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @using (Html.BeginForm("Add", "Account", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>Username</td>
+                <td>
+                    @Html.TextBoxFor(a => a.Username)
+                </td>
+            </tr>
+            <tr>
+                <td>Full Name</td>
+                <td>
+                    @Html.TextBoxFor(a => a.FullName)
+                </td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    @Html.CheckBoxFor(a => a.Status)
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Save" />
+                    @Html.HiddenFor(a => a.Id)
+                </td>
+            </tr>
+        </table>
+    }
+</body>
+</html>
